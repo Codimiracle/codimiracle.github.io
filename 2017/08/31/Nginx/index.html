@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  <title>Nginx | Codimiracle</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="description" content="什么是 Nginx nginx [engine x] 是一个集HTTP、反向代理、邮件代理 和通用的 TCP/UDP` 服务器。第一个版本由 Igor Sysoev 编写。很长一段时间后, Nginx 开始在俄国的一些高负载的网站上运行包括：Yandex, Mail.Ru, VK, 和 Rambler等。根据 Netcraft 公布的2017年八月的调研数据, 大约 29.25% 的商业网站使用">
+<meta name="keywords" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://codimiracle.github.io/2017/08/31/Nginx/index.html">
+<meta property="og:site_name" content="Codimiracle">
+<meta property="og:description" content="什么是 Nginx nginx [engine x] 是一个集HTTP、反向代理、邮件代理 和通用的 TCP/UDP` 服务器。第一个版本由 Igor Sysoev 编写。很长一段时间后, Nginx 开始在俄国的一些高负载的网站上运行包括：Yandex, Mail.Ru, VK, 和 Rambler等。根据 Netcraft 公布的2017年八月的调研数据, 大约 29.25% 的商业网站使用">
+<meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-08-31T15:30:37.135Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Nginx">
+<meta name="twitter:description" content="什么是 Nginx nginx [engine x] 是一个集HTTP、反向代理、邮件代理 和通用的 TCP/UDP` 服务器。第一个版本由 Igor Sysoev 编写。很长一段时间后, Nginx 开始在俄国的一些高负载的网站上运行包括：Yandex, Mail.Ru, VK, 和 Rambler等。根据 Netcraft 公布的2017年八月的调研数据, 大约 29.25% 的商业网站使用">
+  
+    <link rel="alternate" href="/atom.xml" title="Codimiracle" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  <link rel="stylesheet" href="/css/style.css">
+  
+
+</head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Codimiracle</a>
+      </h1>
+      
+        <h2 id="subtitle-wrap">
+          <a href="/" id="subtitle">Coding for miracle</a>
+        </h2>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="搜索"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://codimiracle.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Nginx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/31/Nginx/" class="article-date">
+  <time datetime="2017-08-31T09:25:52.000Z" itemprop="datePublished">2017-08-31</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Nginx
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="什么是-Nginx"><a href="#什么是-Nginx" class="headerlink" title="什么是 Nginx"></a>什么是 Nginx</h3><p> nginx [engine x] 是一个集<code>HTTP</code>、<code>反向代理</code>、<code>邮件代理</code> 和通用的 TCP/UDP` 服务器。第一个版本由 Igor Sysoev 编写。很长一段时间后, Nginx 开始在俄国的一些高负载的网站上运行包括：Yandex, Mail.Ru, VK, 和 Rambler等。根据 Netcraft 公布的2017年八月的调研数据, 大约 29.25% 的商业网站使用 Nginx 服务器。这里有一些成功的案例: Netflix, Wordpress.com, FastMail.FM.</p>
+<p>Nginx 的源代码和文档在遵循 2-clause BSD-like 协议。</p>
+<p>Nginx, Inc 提供商业支持。</p>
+<p>Basic HTTP server features</p>
+<pre><code>Serving static and index files, autoindexing; open file descriptor cache;
+Accelerated reverse proxying with caching; load balancing and fault tolerance;
+Accelerated support with caching of FastCGI, uwsgi, SCGI, and memcached servers; load balancing and fault tolerance;
+Modular architecture. Filters include gzipping, byte ranges, chunked responses, XSLT, SSI, and image transformation filter. Multiple SSI inclusions within a single page can be processed in parallel if they are handled by proxied or FastCGI/uwsgi/SCGI servers;
+SSL and TLS SNI support;
+Support for HTTP/2 with weighted and dependency-based prioritization.
+</code></pre>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://codimiracle.github.io/2017/08/31/Nginx/" data-id="cj70lxyl90000oywl66me8d2x" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2017/08/31/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Nginx/" style="font-size: 10px;">Nginx</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2017/08/">八月 2017</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2017/08/31/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2017/08/31/Nginx/">Nginx</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2017 Codimiracle<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+  <script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+<script src="/js/script.js"></script>
+
+  </div>
+</body>
+</html>
