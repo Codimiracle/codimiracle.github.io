@@ -3,15 +3,20 @@
 <head>
   <meta charset="utf-8">
   
-  <title>归档: 2017 | Codimiracle</title>
+  <title>Nginx | Codimiracle</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Codimiracle">
-<meta property="og:url" content="http://codimiracle.github.io/archives/2017/index.html">
+  <meta name="description" content="目录 Installing nginx Beginner’s Guide Admin’s Guide Controlling nginx Connection processing methods Setting up hashes A debugging log Logging to syslog Configuration file measurement units Command-line">
+<meta name="keywords" content="Nginx">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Nginx">
+<meta property="og:url" content="http://codimiracle.github.io/2017/08/31/nginx/index.html">
 <meta property="og:site_name" content="Codimiracle">
+<meta property="og:description" content="目录 Installing nginx Beginner’s Guide Admin’s Guide Controlling nginx Connection processing methods Setting up hashes A debugging log Logging to syslog Configuration file measurement units Command-line">
 <meta property="og:locale" content="zh-CN">
+<meta property="og:updated_time" content="2017-09-09T15:35:59.941Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Codimiracle">
+<meta name="twitter:title" content="Nginx">
+<meta name="twitter:description" content="目录 Installing nginx Beginner’s Guide Admin’s Guide Controlling nginx Connection processing methods Setting up hashes A debugging log Logging to syslog Configuration file measurement units Command-line">
   
     <link rel="alternate" href="/atom.xml" title="Codimiracle" type="application/atom+xml">
   
@@ -64,153 +69,94 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-  
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2017" class="archive-year">2017</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/php/" class="archive-article-date">
-  <time datetime="2017-09-05T11:58:40.000Z" itemprop="datePublished">9月 5</time>
+        <section id="main"><article id="post-nginx" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/08/31/nginx/" class="article-date">
+  <time datetime="2017-08-31T09:25:52.000Z" itemprop="datePublished">2017-08-31</time>
 </a>
-      
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/php/">PHP</a>
+    <h1 class="article-title" itemprop="name">
+      Nginx
     </h1>
   
 
-    </header>
-  </div>
-</article>
-  
+      </header>
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/javascript/" class="archive-article-date">
-  <time datetime="2017-09-05T11:58:30.000Z" itemprop="datePublished">9月 5</time>
-</a>
+    <div class="article-entry" itemprop="articleBody">
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/javascript/">JavaScript</a>
-    </h1>
-  
+        <h3 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h3><ul>
+<li>Installing nginx</li>
+<li>Beginner’s Guide</li>
+<li>Admin’s Guide</li>
+<li>Controlling nginx</li>
+<li>Connection processing methods</li>
+<li>Setting up hashes</li>
+<li>A debugging log</li>
+<li>Logging to syslog</li>
+<li>Configuration file measurement units</li>
+<li>Command-line parameters</li>
+<li><p>nginx for Windows</p>
+</li>
+<li><p>How nginx processes a request</p>
+</li>
+<li>Server names</li>
+<li>Using nginx as HTTP load balancer</li>
+<li><p>Configuring HTTPS servers</p>
+</li>
+<li><p>How nginx processes a TCP/UDP session</p>
+</li>
+<li><p>About nginScript</p>
+</li>
+<li><p>Chapter “nginx” in “The Architecture of Open Source Applications”</p>
+<h3 id="“Installing-nginx”"><a href="#“Installing-nginx”" class="headerlink" title="(“Installing nginx”)[#]"></a>(“Installing nginx”)[#]</h3><h3 id="简介"><a href="#简介" class="headerlink" title="简介"></a>简介</h3><p>nginx [engine x] 是一个集<code>HTTP</code>、<code>反向代理</code>、<code>邮件代理</code> 和 <code>UTCP/UUDP</code> 的服务器。第一个版本由 Igor Sysoev 编写。很长一段时间后, Nginx 开始在俄国的一些高负载网站上运行包括：Yandex, Mail.Ru, VK, 和 Rambler等。根据 Netcraft 公布的2017年八月的调研数据, 大约 29.25% 的商业网站使用 Nginx 服务器。著名的案例有: Netflix, Wordpress.com, FastMail.FM.</p>
+</li>
+</ul>
+<p>Nginx 的源代码和文档遵循 2-clause BSD-like 协议。</p>
+<p>由 Nginx, Inc 提供商业支持。</p>
+<h4 id="基本-HTML-服务器特性："><a href="#基本-HTML-服务器特性：" class="headerlink" title="基本 HTML 服务器特性："></a>基本 HTML 服务器特性：</h4><ul>
+<li>自动索引静态文件和 index 文件；文件打开句柄缓存；</li>
+<li>反向代理缓存加速; 负载均衡和故障容错；</li>
+<li>缓存加速支持 FastCGI, uwsgi, SCGI, 和 memcached 服务器; 负载均衡和故障容错；</li>
+<li>模块架构. 过滤器包括： gzipping, byte ranges, chunked responses, XSLT, SSI, 和 image transformation 等过滤器. Multiple SSI inclusions within a single page can be processed in parallel if they are handled by proxied or FastCGI/uwsgi/SCGI servers;</li>
+<li>SSL and TLS SNI ;</li>
+<li>Support for HTTP/2 with weighted and dependency-based prioritization.<br>####</li>
+</ul>
 
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/bootstrap/" class="archive-article-date">
-  <time datetime="2017-09-05T11:58:14.000Z" itemprop="datePublished">9月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/bootstrap/">Bootstrap</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/cpp/" class="archive-article-date">
-  <time datetime="2017-09-05T11:57:28.000Z" itemprop="datePublished">9月 5</time>
-</a>
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://codimiracle.github.io/2017/08/31/nginx/" data-id="cj7dh3rkv0001sawl0egbxg5r" class="article-share-link">Share</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/cpp/">C++</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/09/05/python/" class="archive-article-date">
-  <time datetime="2017-09-05T11:57:01.000Z" itemprop="datePublished">9月 5</time>
-</a>
       
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/09/05/python/">Python</a>
-    </h1>
-  
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Nginx/">Nginx</a></li></ul>
 
-    </header>
+    </footer>
   </div>
-</article>
   
     
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/31/hello-world/" class="archive-article-date">
-  <time datetime="2017-08-31T14:52:57.639Z" itemprop="datePublished">8月 31</time>
-</a>
-      
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/31/hello-world/">Hello World</a>
-    </h1>
+    <a href="/2017/08/31/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
   
+  
+</nav>
 
-    </header>
-  </div>
+  
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      <a href="/2017/08/31/nginx/" class="archive-article-date">
-  <time datetime="2017-08-31T09:25:52.000Z" itemprop="datePublished">8月 31</time>
-</a>
-      
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2017/08/31/nginx/">Nginx</a>
-    </h1>
-  
-
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
 
 </section>
         
